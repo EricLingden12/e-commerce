@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./Components/Common/NavBar";
 import Home from "./Pages/Home";
-import Men from "./pages/Men";
+import Men from "./Pages/Men";
 import Women from "./Pages/Women";
 import Offer from "./Pages/Offer";
 import Login from "./pages/Login";
