@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+.prata-regular {
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+a {
+  cursor: pointer;
+}
+
+/* nav bar */
+.navlinks a.active {
+  font-size: 19px;
+  color: red;
+  font-weight: 600;
+  text-decoration: none;
+}
+.cart.active {
+  color: red;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+a.active hr {
+  display: block;
+}
+
+.categories:hover {
+  background: rgb(210, 206, 206);
+  color: black;
+}
+
+.main-menu {
+  display: none;
+}
+
+.scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.box-shadow {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
