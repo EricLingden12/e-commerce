@@ -7,9 +7,13 @@ const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
-    <div className={`mt-2`}>
+    <div className={`mt-2 `}>
       {openSearch ? (
-        <form className="absolute top-15 left-0 bg-black w-full ">
+        <form
+          className={`absolute top-15 left-0 bg-black w-full duration-400 ${
+            openSearch ? "translate-y-0" : "translate-y-full"
+          }`}
+        >
           <div className="flex items-center justify-center gap-2">
             <div className="bg-white md:w-[40%] w-[80%] mt-2 mb-4 px-2 rounded-md flex items-center">
               <input

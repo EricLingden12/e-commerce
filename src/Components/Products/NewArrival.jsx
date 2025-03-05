@@ -1,114 +1,14 @@
 import React, { useState, useRef, useEffect } from "react";
-
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { NavLink } from "react-router-dom";
-
-// import { newarrivelData } from "../product";
+import { newarrivelData } from "../product";
+import { FaShoppingCart } from "react-icons/fa";
 
 export default function NewArrival() {
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const [scrollAmount, setScrollAmount] = useState(1000); // Dynamic scroll value
-
-  const newarrivelData = [
-    {
-      productid: 1,
-      name: "T-shirt",
-      brand: "Adidas",
-      price: 20,
-      image: [
-        {
-          url: "https://picsum.photos/600/600/?random=1",
-          altText: "T - shirt",
-        },
-      ],
-    },
-    {
-      productid: 2,
-      name: "T-shirt",
-      brand: "Adidas",
-      price: 20,
-      image: [
-        {
-          url: "https://picsum.photos/600/600?random=2",
-          altText: "T - shirt",
-        },
-      ],
-    },
-    {
-      productid: 3,
-      name: "T-shirt",
-      brand: "Adidas",
-      price: 20,
-      image: [
-        {
-          url: "https://picsum.photos/600/600?random=3",
-          altText: "T - shirt",
-        },
-      ],
-    },
-    {
-      productid: 4,
-      name: "T-shirt",
-      brand: "Adidas",
-      price: 20,
-      image: [
-        {
-          url: "https://picsum.photos/600/600?random=4",
-          altText: "T - shirt",
-        },
-      ],
-    },
-    {
-      productid: 5,
-      name: "T-shirt",
-      brand: "Adidas",
-      price: 20,
-      image: [
-        {
-          url: "https://picsum.photos/600/600?random=5",
-          altText: "T - shirt",
-        },
-      ],
-    },
-    {
-      productid: 6,
-      name: "T-shirt",
-      brand: "Adidas",
-      price: 20,
-      image: [
-        {
-          url: "https://picsum.photos/600/600?random=6",
-          altText: "T - shirt",
-        },
-      ],
-    },
-    {
-      productid: 7,
-      name: "T-shirt",
-      brand: "Adidas",
-      price: 20,
-      image: [
-        {
-          url: "https://picsum.photos/600/600?random=7",
-          altText: "T - shirt",
-        },
-      ],
-    },
-    {
-      productid: 8,
-      name: "T-shirt",
-      brand: "Adidas",
-      price: 20,
-      image: [
-        {
-          url: "https://picsum.photos/600/600?random=8",
-          altText: "T - shirt",
-        },
-      ],
-    },
-  ];
 
   useEffect(() => {
     const updateScrollAmount = () => {
@@ -183,11 +83,10 @@ export default function NewArrival() {
         {newarrivelData.map((item) => {
           return (
             <div
-              to="/product/:id"
               key={item.id}
               className="min-w-[60%] sm:min-w-[50%] lg:min-w-[25%] box-shadow p-5 text-start"
             >
-              <NavLink to="/product/:id">
+              <NavLink to={`/product/${item.productid}`}>
                 <img
                   className="w-[100%] mb-2"
                   draggable="false"
@@ -202,7 +101,7 @@ export default function NewArrival() {
                   <div className="text-center ">
                     <p className="text-lg font-bold mb-2">${item.price}</p>
                     <button className="bg-white px-3 py-1 rounded-xl text-sm font-bold cursor-pointer">
-                      Add to Cart
+                      <FaShoppingCart className="text-black w-6 h-6" />
                     </button>
                   </div>
                 </div>

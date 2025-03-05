@@ -4,13 +4,24 @@ import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { Toaster } from "sonner";
-import { CartProvider } from "./Components/Cart/CartProvider.jsx"; // Import the CartProvider
+import { Auth0Provider } from "@auth0/auth0-react";
+import { CartProvider } from "./Components/Cart/CartProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
-      <Toaster position="top-right" />
-      <App />
-    </BrowserRouter>
+    <Auth0Provider
+      domain="dev-j38bx5mr60akdaxo.us.auth0.com"
+      clientId="IU7rldbnJDL1IfayJBqZR8t2W0iOA8Kx"
+      authorizationParams={{
+        redirect_uri: window.location.origin,
+      }}
+    >
+      <CartProvider>
+        <BrowserRouter>
+          <Toaster position="top-right" />
+          <App />
+        </BrowserRouter>
+      </CartProvider>
+    </Auth0Provider>
   </StrictMode>
 );

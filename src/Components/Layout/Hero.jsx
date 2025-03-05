@@ -32,9 +32,13 @@ const Hero = () => {
                 Collection
               </p>
             </div>
-            <button className="bg-blue-600 hover:bg-blue-800 text-white md:text-xl text-md rounded-md cursor-pointer w-[150px] h-[50px]">
+
+            <NavLink
+              to="/collections:collection"
+              className="bg-blue-600 hover:bg-blue-800 text-center text-white text-xl rounded-md cursor-pointer w-[150px] h-[50px] pt-2"
+            >
               Shop Now
-            </button>
+            </NavLink>
           </div>
           {/* hero images  */}
           <div className="relative md:w-[70%] w-[100%]">

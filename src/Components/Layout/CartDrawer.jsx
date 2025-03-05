@@ -1,4 +1,3 @@
-// CartDrawer.jsx
 import React from "react";
 import { RxCross2 } from "react-icons/rx";
 import CartContents from "../Cart/CartContents";
@@ -11,7 +10,7 @@ const CartDrawer = ({ cart, setCart }) => {
 
   const handleCheckout = () => {
     setCart(false);
-    navigate("/checkout");
+    navigate("/checkout", { state: { cartItems } });
   };
 
   return (

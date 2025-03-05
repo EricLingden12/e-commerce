@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 
-const FilterSidebar = () => {
+const FilterSidebar = ({ onFilterChange }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
   const [filter, setFilter] = useState({
-    category: [], // Changed to array
-    gender: [], // Changed to array
+    category: [],
+    gender: [],
     color: "",
     size: [],
     material: [],
@@ -37,8 +37,8 @@ const FilterSidebar = () => {
   useEffect(() => {
     const params = Object.fromEntries([...searchParams]);
     setFilter({
-      category: params.category ? params.category.split(",") : [], // Changed to array
-      gender: params.gender ? params.gender.split(",") : [], // Changed to array
+      category: params.category ? params.category.split(",") : [],
+      gender: params.gender ? params.gender.split(",") : [],
       color: params.color || "",
       size: params.size ? params.size.split(",") : [],
       material: params.material ? params.material.split(",") : [],
@@ -75,6 +75,8 @@ const FilterSidebar = () => {
     }
     setFilter(newFilters);
     updateUrlParams(newFilters);
+    onFilterChange(newFilters); // Pass the updated filters to the parent component
+    console.log("Updated Filters:", newFilters); // Debugging statement
   };
 
   const updateUrlParams = (newFilters) => {
@@ -99,10 +101,10 @@ const FilterSidebar = () => {
         {gender.map((gender) => (
           <div key={gender}>
             <input
-              type="checkbox" // Changed to checkbox
+              type="checkbox"
               name="gender"
               value={gender}
-              checked={filter.gender.includes(gender)} // Check if gender is selected
+              checked={filter.gender.includes(gender)}
               className="text-md text-blue-700 font-medium"
               onChange={handleFilterChange}
             />

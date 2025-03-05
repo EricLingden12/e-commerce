@@ -1,49 +1,70 @@
-// CartContext.js
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = (product) => {
+  // Load cart items from localStorage when the component mounts
+  useEffect(() => {
+    const savedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    setCartItems(savedCartItems);
+  }, []);
+
+  // Save cart items to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  const addToCart = (item) => {
     setCartItems((prevItems) => {
-      const itemExists = prevItems.find(
-        (item) => item.productid === product.productid
+      const existingItem = prevItems.find(
+        (i) =>
+          i.productid === item.productid &&
+          i.size === item.size &&
+          i.color === item.color
       );
-      if (itemExists) {
-        return prevItems.map((item) =>
-          item.productid === product.productid
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
+      if (existingItem) {
+        return prevItems.map((i) =>
+          i.productid === item.productid &&
+          i.size === item.size &&
+          i.color === item.color
+            ? { ...i, quantity: i.quantity + 1 }
+            : i
         );
-      } else {
-        return [...prevItems, { ...product, quantity: 1 }];
       }
+      return [...prevItems, { ...item, quantity: 1 }];
     });
   };
 
-  const removeFromCart = (productId) => {
+  const removeFromCart = (productid, size, color) => {
     setCartItems((prevItems) =>
-      prevItems.filter((item) => item.productid !== productId)
+      prevItems.filter(
+        (item) =>
+          !(
+            item.productid === productid &&
+            item.size === size &&
+            item.color === color
+          )
+      )
     );
   };
 
-  const increaseQuantity = (productId) => {
+  const increaseQuantity = (productid) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
-        item.productid === productId
+        item.productid === productid
           ? { ...item, quantity: item.quantity + 1 }
           : item
       )
     );
   };
 
-  const decreaseQuantity = (productId) => {
+  const decreaseQuantity = (productid) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
-        item.productid === productId
-          ? { ...item, quantity: Math.max(item.quantity - 1, 1) } // Ensure quantity doesn't go below 1
+        item.productid === productid && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
           : item
       )
     );

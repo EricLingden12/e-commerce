@@ -1,35 +1,17 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { IoIosArrowRoundBack } from "react-icons/io";
-
-const cart = {
-  product: [
-    {
-      name: "Shirt",
-      size: "xl",
-      color: "white",
-      price: 30,
-      image: "https://picsum.photos/600/600/?random=1",
-      brand: "Adidas",
-    },
-    {
-      name: "Jense",
-      size: "xl",
-      color: "Blue",
-      price: 40,
-      image: "https://picsum.photos/600/600/?random=2",
-      brand: "Nike",
-    },
-  ],
-  totalPrice: 70,
-};
 
 const Checkout = () => {
   const navigate = useNavigate();
   const navigatePayment = useNavigate();
+  const location = useLocation();
+  const cartItems = location.state?.cartItems || []; // Retrieve cart items from route state
+
   const handleEsewaPayment = () => {
     navigatePayment("/paymentmethood");
   };
+
   const [checkout, setCheckout] = useState(true);
   const [shippingAddress, setShippingAddress] = useState({
     firstName: "",
@@ -38,6 +20,12 @@ const Checkout = () => {
     city: "",
     phoneNumber: "",
   });
+
+  // Calculate total price
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
 
   return (
     <div className="my-[100px] w-[80%] mx-auto lg:flex grid items-start justify-center gap-5">
@@ -185,7 +173,7 @@ const Checkout = () => {
       {/* product detail */}
       <div className=" lg:w-[40%] w-full mx-auto py-10 rounded-md shadow-md">
         <h1 className="text-center text-xl font-bold">Order Summary</h1>
-        {cart.product.map((item, index) => {
+        {cartItems.map((item, index) => {
           return (
             <div key={index} className="mb-5 px-5 flex items-center gap-5">
               <img
@@ -207,7 +195,7 @@ const Checkout = () => {
                 </div>
                 <div className="text-center">
                   <p className="text-lg font-bold mb-2">${item.price}</p>
-                  <p className="text-lg font-bold mb-2">x{item.quantity}</p>
+                  <p className="text-md font-bold mb-2">Qty:{item.quantity}</p>
                 </div>
               </div>
             </div>
@@ -216,9 +204,7 @@ const Checkout = () => {
         <div className="w-full px-5">
           <div className="border-t-2 border-gray-700 flex items-center justify-between pt-3">
             <p className="text-md font-bold">Sub Total</p>
-            <p className="text-md font-bold">
-              ${cart.totalPrice?.toLocaleString()}
-            </p>
+            <p className="text-md font-bold">${totalPrice.toLocaleString()}</p>
           </div>
           <div className="flex items-center justify-between pb-3">
             <p className="text-md font-bold">Shipping cost</p>
@@ -226,9 +212,7 @@ const Checkout = () => {
           </div>
           <div className="border-t-2 border-gray-700 flex items-center justify-between pt-3">
             <p className="text-lg font-bold">Total Amount</p>
-            <p className="text-lg font-bold">
-              ${cart.totalPrice?.toLocaleString()}
-            </p>
+            <p className="text-lg font-bold">${totalPrice.toLocaleString()}</p>
           </div>
         </div>
       </div>

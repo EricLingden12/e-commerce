@@ -21,6 +21,9 @@ a {
   font-weight: 600;
   text-decoration: none;
 }
+.logo-name.active {
+  color: red;
+}
 .cart.active {
   color: red;
 }

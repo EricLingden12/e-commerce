@@ -11,12 +11,11 @@ const ProductDetail = () => {
   const [selectColor, setSelectColor] = useState("");
   const [selectSize, setSelectSize] = useState("");
   const [changeQuantity, setChangeQuantity] = useState(1);
-  const { id } = useParams(); // Get the product ID from the URL
+  const { id } = useParams();
 
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
-    // Find the product with the matching ID
     const foundProduct = product.find((p) => p.productid === parseInt(id));
     setSelectedProduct(foundProduct);
   }, [id]);
@@ -25,6 +24,7 @@ const ProductDetail = () => {
     return <div>Loading...</div>;
   }
 
+  // ProductDetail.jsx
   const handleCart = () => {
     if (!selectColor && !selectSize) {
       toast.error("Please select color and size", {
@@ -57,9 +57,9 @@ const ProductDetail = () => {
   };
 
   return (
-    <div className="md:container w-[100%] mt-[150px] md:flex grid justify-center mx-auto gap-2">
-      <div className="flex md:flex-row flex-col-reverse gap-8 items-start mx-auto">
-        {/* left side */}
+    <div className="md:container w-[100%] mt-[150px] mb-[100px] md:flex grid justify-center mx-auto gap-10">
+      <div className="flex md:flex-row flex-col-reverse gap-8 items-start ">
+        {/* Left side - Thumbnails */}
         <div className="md:grid flex gap-4">
           {selectedProduct.image.map((image, index) => (
             <img
@@ -71,26 +71,23 @@ const ProductDetail = () => {
             />
           ))}
         </div>
-        {/* main image */}
+        {/* Main image */}
         <div>
           <img
             className="w-[400px] h-[450px] rounded-lg"
             src={selectedProduct.image[mainImage].url}
-            alt=""
+            alt={selectedProduct.image[mainImage].altText}
           />
         </div>
       </div>
-      {/* right side */}
+      {/* Right side - Product details */}
       <div className="grid gap-3 md:mx-0 md:ms-0 md:mt-0 mt-10 ms-12 mb-[100px] mx-auto">
         <h1 className="text-3xl font-extrabold">{selectedProduct.name}</h1>
-        <p className="font-light text-xl line-through text-gray-500">
-          ${selectedProduct.originalPrice}
-        </p>
         <p className="font-light text-xl">${selectedProduct.price}</p>
         <p className="font-light text-md text-gray-500">
           {selectedProduct.description}
         </p>
-        {/* color */}
+        {/* Color selection */}
         <div>
           <p className="mb-1 text-lg">Color:</p>
           <div className="flex gap-2 items-center">
@@ -106,7 +103,7 @@ const ProductDetail = () => {
             ))}
           </div>
         </div>
-        {/* size */}
+        {/* Size selection */}
         <div>
           <p className="mb-1 text-lg">Size:</p>
           <div className="flex gap-2 items-center ">
@@ -123,28 +120,7 @@ const ProductDetail = () => {
             ))}
           </div>
         </div>
-        {/* quantity */}
-        <div>
-          <p className="mb-1 text-lg">Quantity:</p>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() =>
-                setChangeQuantity(changeQuantity > 1 ? changeQuantity - 1 : 1)
-              }
-              className="border-1 border-gray-300 rounded-sm p-1 cursor-pointer"
-            >
-              <FiMinus className="w-5 h-5 font-bold text-2xl" />
-            </button>
-            <span className="text-lg font-semibold"> {changeQuantity} </span>
-            <button
-              onClick={() => setChangeQuantity(changeQuantity + 1)}
-              className="border border-gray-300 rounded-sm p-1 cursor-pointer"
-            >
-              <FiPlus className="w-5 h-5 font-bold text-2xl" />
-            </button>
-          </div>
-        </div>
-        {/* add to cart */}
+        {/* Add to cart button */}
         <div className="mt-3">
           <button
             onClick={handleCart}
@@ -152,24 +128,6 @@ const ProductDetail = () => {
           >
             Add to Cart
           </button>
-        </div>
-        {/* characteristics */}
-        <div>
-          <h1 className="text-xl font-bold text-gray-800">
-            Characteristics :{" "}
-          </h1>
-          <div>
-            <div>
-              <p className="text-md font-semibold flex items-center gap-2">
-                Brand:
-                <span className="font-light">{selectedProduct.brand}</span>
-              </p>
-              <p className="text-md font-semibold flex items-center gap-2">
-                Material:
-                <span className="font-light">{selectedProduct.material}</span>
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
