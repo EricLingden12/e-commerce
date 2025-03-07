@@ -32,7 +32,11 @@ const CartContents = () => {
               <img
                 src={imageUrl}
                 alt={itemName}
-                className="w-16 h-16 rounded-lg"
+                className="w-16 h-16 rounded-lg object-cover border"
+                onError={(e) => {
+                  console.log("Failed to load image:", imageUrl);
+                  e.target.src = "/fallback-image.jpg";
+                }}
               />
               <div>
                 <p className="font-semibold">{itemName}</p>
@@ -41,11 +45,19 @@ const CartContents = () => {
                 <p className="text-sm text-gray-500">Color: {itemColor}</p>
               </div>
               <div className="flex items-center gap-2">
-                <button onClick={() => decreaseQuantity(item.productid)}>
+                <button
+                  onClick={() =>
+                    decreaseQuantity(item.productid, item.size, item.color)
+                  }
+                >
                   <FiMinus className="w-4 h-4" />
                 </button>
                 <span>{itemQuantity}</span>
-                <button onClick={() => increaseQuantity(item.productid)}>
+                <button
+                  onClick={() =>
+                    increaseQuantity(item.productid, item.size, item.color)
+                  }
+                >
                   <FiPlus className="w-4 h-4" />
                 </button>
               </div>

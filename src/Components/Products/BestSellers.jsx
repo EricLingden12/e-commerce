@@ -87,7 +87,7 @@ export default function BestSellers() {
               className="min-w-[60%] sm:min-w-[50%] lg:min-w-[25%] box-shadow p-5 text-start"
             >
               <img
-                className="w-[100%] mb-2"
+                className="w-[100%] h-[300px] mb-2"
                 draggable="false"
                 src={item.image[0]?.url}
                 alt={item.image[0]?.altText}

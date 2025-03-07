@@ -88,7 +88,7 @@ export default function NewArrival() {
             >
               <NavLink to={`/product/${item.productid}`}>
                 <img
-                  className="w-[100%] mb-2"
+                  className="w-[100%] h-[300px] mb-2"
                   draggable="false"
                   src={item.image[0]?.url}
                   alt={item.image[0]?.altText}

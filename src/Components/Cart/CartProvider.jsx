@@ -50,26 +50,31 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  const increaseQuantity = (productid) => {
+  // In CartProvider.jsx
+  const increaseQuantity = (productid, size, color) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
-        item.productid === productid
+        item.productid === productid &&
+        item.size === size &&
+        item.color === color
           ? { ...item, quantity: item.quantity + 1 }
           : item
       )
     );
   };
 
-  const decreaseQuantity = (productid) => {
+  const decreaseQuantity = (productid, size, color) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
-        item.productid === productid && item.quantity > 1
+        item.productid === productid &&
+        item.size === size &&
+        item.color === color &&
+        item.quantity > 1
           ? { ...item, quantity: item.quantity - 1 }
           : item
       )
     );
   };
-
   return (
     <CartContext.Provider
       value={{

@@ -52,7 +52,7 @@ const NavBar = () => {
             <p className="relative">
               <FaShoppingCart
                 onClick={() => setCart(true)}
-                className="w-6 h-6"
+                className="w-6 h-6 cursor-pointer"
               />
               <span className="absolute bottom-4 right-0 text-red-500 text-md">
                 {cartItems.reduce((total, item) => total + item.quantity, 0)}
