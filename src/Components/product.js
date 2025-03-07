@@ -1,3 +1,26 @@
+import image1 from "../../public/assets/hero_img/dWEcMIDFT0sP4RZX-generated_image.jpg";
+import image2 from "../../public/assets/hero_img/67PRXXlwxhDSqYo6-generated_image.jpg";
+import image3 from "../../public/assets/hero_img/20bcb541-0c6e-404d-a846-51cabc66f679.png";
+import image4 from "../../public/assets/hero_img/6f5be0cb-c671-4a0b-9afb-7a6b4622e3c9.png";
+import image5 from "../../public/assets/hero_img/b68ee65c-c8f4-4e24-bc46-450ed9667a8b.jpg";
+import image6 from "../../public/assets/hero_img/c7d9cbba-cc53-4be3-986f-2264e477fdc0.jpg";
+import image7 from "../../public/assets/hero_img/57d6142a-b700-4014-a5bc-d60ac92900e7.png";
+import image8 from "../../public/assets/hero_img/096a777f-046a-4531-8edd-ba01d873a566.png";
+import image9 from "../../public/assets/hero_img/55a6a215-4051-4c37-a6ad-5adf97b0cecf.png";
+import image10 from "../../public/assets/hero_img/3f49f8cf-dbeb-4481-978d-ea73fee47ebf.png";
+import image11 from "../../public/assets/hero_img/aa7a7e1c-0d77-4bdc-b26f-2d97957a3522.png";
+// women section
+import image12 from "../../public/assets/hero_img/fe502a7b-9ffc-454e-87e9-1ee378e6342b.png";
+import image13 from "../../public/assets/hero_img/b354b252-568d-45e1-bcf7-a93a2e726858.png";
+import image14 from "../../public/assets/hero_img/2a905da4-15c9-4325-ba70-70dbd5edfeac.png";
+import image15 from "../../public/assets/hero_img/238a9b30-9f36-496b-9912-59cb3dc1bd31.png";
+import image16 from "../../public/assets/hero_img/9e5280b7-5870-4184-9354-081f89cfd9c3.png";
+import image17 from "../../public/assets/hero_img/f3427e24-f7cd-4467-a89b-c15a40fc6568.png";
+import image18 from "../../public/assets/hero_img/1b0d5900-7dd6-4f39-a1e1-f6ac7f0477d6.png";
+import image19 from "../../public/assets/hero_img/8d741681-80ea-4265-86bd-aac6ecd27cde.png";
+import image20 from "../../public/assets/hero_img/c9f3fc02-c6ec-4184-836c-e0d03c3ba45e.png";
+import image21 from "../../public/assets/hero_img/865bad8a-d977-4300-8565-e0cf4b6fab0d.png";
+
 export const product = [
   // Men's Category - Top Wear (5 products)
   {
@@ -14,11 +37,11 @@ export const product = [
     category: "Top Wear",
     image: [
       {
-        url: "https://picsum.photos/600/600?random=1",
+        url: image1,
         altText: "Men's White Cotton T-shirt",
       },
       {
-        url: "https://picsum.photos/600/600?random=2",
+        url: image2,
         altText: "Men's Black Cotton T-shirt",
       },
     ],
@@ -33,16 +56,16 @@ export const product = [
       "A sleek and modern polo shirt for a casual yet polished look.",
     material: "Cotton",
     size: ["S", "M", "L", "XL"],
-    color: ["Blue", "Gray", "Green"],
+    color: ["Pink", "White", "Navy"],
     gender: "Men",
     category: "Top Wear",
     image: [
       {
-        url: "https://picsum.photos/600/600?random=3",
+        url: image3,
         altText: "Men's Blue Polo Shirt",
       },
       {
-        url: "https://picsum.photos/600/600?random=4",
+        url: image4,
         altText: "Men's Gray Polo Shirt",
       },
     ],
@@ -61,7 +84,7 @@ export const product = [
     category: "Top Wear",
     image: [
       {
-        url: "https://picsum.photos/600/600?random=5",
+        url: image5,
         altText: "Men's Black Hoodie",
       },
       {
@@ -85,7 +108,7 @@ export const product = [
     category: "Top Wear",
     image: [
       {
-        url: "https://picsum.photos/600/600?random=7",
+        url: image6,
         altText: "Men's Navy Jacket",
       },
       {
@@ -133,7 +156,7 @@ export const product = [
     category: "Bottom Wear",
     image: [
       {
-        url: "https://picsum.photos/600/600?random=11",
+        url: image7,
         altText: "Men's Blue Jeans",
       },
       {
@@ -156,7 +179,7 @@ export const product = [
     category: "Bottom Wear",
     image: [
       {
-        url: "https://picsum.photos/600/600?random=13",
+        url: image8,
         altText: "Men's Khaki Chinos",
       },
       {
@@ -179,7 +202,7 @@ export const product = [
     category: "Bottom Wear",
     image: [
       {
-        url: "https://picsum.photos/600/600?random=15",
+        url: image9,
         altText: "Men's Green Cargo Shorts",
       },
       {
@@ -203,7 +226,7 @@ export const product = [
     category: "Bottom Wear",
     image: [
       {
-        url: "https://picsum.photos/600/600?random=17",
+        url: image10,
         altText: "Men's Black Joggers",
       },
       {
@@ -226,7 +249,7 @@ export const product = [
     category: "Bottom Wear",
     image: [
       {
-        url: "https://picsum.photos/600/600?random=19",
+        url: image11,
         altText: "Men's Blue Denim Shorts",
       },
       {
@@ -251,7 +274,7 @@ export const product = [
     category: "Top Wear",
     image: [
       {
-        url: "https://picsum.photos/600/600?random=21",
+        url: image12,
         altText: "Women's White T-shirt",
       },
       {
@@ -274,7 +297,7 @@ export const product = [
     category: "Top Wear",
     image: [
       {
-        url: "https://picsum.photos/600/600?random=23",
+        url: image13,
         altText: "Women's Black Crop Top",
       },
       {
@@ -285,7 +308,7 @@ export const product = [
   },
   {
     productid: 13,
-    name: "Women's Hooded Sweatshirt",
+    name: "Women's Hooded",
     brand: "Puma",
     price: 50,
     originalPrice: 65,
@@ -297,7 +320,7 @@ export const product = [
     category: "Top Wear",
     image: [
       {
-        url: "https://picsum.photos/600/600?random=25",
+        url: image14,
         altText: "Women's Pink Hoodie",
       },
       {
@@ -320,7 +343,7 @@ export const product = [
     category: "Top Wear",
     image: [
       {
-        url: "https://picsum.photos/600/600?random=27",
+        url: image15,
         altText: "Women's Blue Denim Jacket",
       },
       {
@@ -343,7 +366,7 @@ export const product = [
     category: "Top Wear",
     image: [
       {
-        url: "https://picsum.photos/600/600?random=29",
+        url: image16,
         altText: "Women's Beige Sweater",
       },
       {
@@ -363,12 +386,12 @@ export const product = [
     description: "Stylish high-waist jeans for a flattering fit.",
     material: "Denim",
     size: ["26", "28", "30", "32"],
-    color: ["Blue", "Black"],
+    color: ["Blue", "Black", "Green"],
     gender: "Women",
     category: "Bottom Wear",
     image: [
       {
-        url: "https://picsum.photos/600/600?random=31",
+        url: image17,
         altText: "Women's Blue Jeans",
       },
       {
@@ -391,7 +414,7 @@ export const product = [
     category: "Bottom Wear",
     image: [
       {
-        url: "https://picsum.photos/600/600?random=33",
+        url: image18,
         altText: "Women's Black Leggings",
       },
       {
@@ -402,7 +425,7 @@ export const product = [
   },
   {
     productid: 18,
-    name: "Women's Denim Shorts",
+    name: "Women's Shorts",
     brand: "Lee",
     price: 35,
     originalPrice: 45,
@@ -414,7 +437,7 @@ export const product = [
     category: "Bottom Wear",
     image: [
       {
-        url: "https://picsum.photos/600/600?random=35",
+        url: image19,
         altText: "Women's Blue Denim Shorts",
       },
       {
@@ -437,7 +460,7 @@ export const product = [
     category: "Bottom Wear",
     image: [
       {
-        url: "https://picsum.photos/600/600?random=37",
+        url: image20,
         altText: "Women's Black Midi Skirt",
       },
       {
@@ -461,7 +484,7 @@ export const product = [
     category: "Bottom Wear",
     image: [
       {
-        url: "https://picsum.photos/600/600?random=39",
+        url: image21,
         altText: "Women's Black Joggers",
       },
       {

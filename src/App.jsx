@@ -13,6 +13,8 @@ import PaymentMethod from "./Components/Cart/PaymentMethod";
 import PaymentSuccess from "./Components/Cart/PaymentSuccess";
 import Footer from "./Components/Common/Footer";
 import { CartProvider } from "./Components/Cart/CartProvider";
+import AdminPage from "./Pages/AdminPage";
+
 // Corrected import path
 
 const App = () => {
@@ -37,7 +39,6 @@ const App = () => {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/paymentmethood" element={<PaymentMethod />} />
         <Route path="/paymentsuccess" element={<PaymentSuccess />} />
-        <Route path="/" />
       </Routes>
       <Footer />
     </CartProvider>

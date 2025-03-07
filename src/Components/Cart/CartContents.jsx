@@ -27,7 +27,7 @@ const CartContents = () => {
           return (
             <div
               key={uniqueKey}
-              className="flex items-center justify-between mb-4"
+              className="flex items-center justify-between mb-4 box-shadow py-2"
             >
               <img
                 src={imageUrl}
@@ -49,16 +49,18 @@ const CartContents = () => {
                   <FiPlus className="w-4 h-4" />
                 </button>
               </div>
-              <p className="font-semibold">
-                ${(itemPrice * itemQuantity).toFixed(2)}
-              </p>
-              <button
-                onClick={() =>
-                  removeFromCart(item.productid, item.size, item.color)
-                }
-              >
-                <MdDeleteForever className="w-6 h-6 text-red-500" />
-              </button>
+              <div className="sm:flex gap-3 text-center grid">
+                <p className="font-semibold">
+                  ${(itemPrice * itemQuantity).toFixed(2)}
+                </p>
+                <button
+                  onClick={() =>
+                    removeFromCart(item.productid, item.size, item.color)
+                  }
+                >
+                  <MdDeleteForever className="w-6 h-6 text-red-500 mx-auto" />
+                </button>
+              </div>
             </div>
           );
         })

@@ -47,10 +47,10 @@ const ProductGrid = ({ filters = {} }) => {
           <NavLink
             to={`/product/${item.productid}`}
             key={item.productid}
-            className="min-w-[60%] sm:min-w-[50%] lg:min-w-[25%] p-5 text-start"
+            className="min-w-[60%] sm:min-w-[50%] lg:min-w-[25%] p-5 text-start box-shadow"
           >
             <img
-              className="w-[100%] mb-2 rounded-md"
+              className="w-[100%] h-[300px] mb-2 rounded-md"
               draggable="false"
               src={item.image[0]?.url || "default-image-url"}
               alt={item.image[0]?.altText || "Default Alt Text"}

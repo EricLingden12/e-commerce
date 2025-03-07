@@ -3,7 +3,7 @@ import ProductGrid from "../Components/Products/ProductGrid";
 import Footer from "../Components/Common/Footer";
 import { FaFilter } from "react-icons/fa";
 import FilterSidebar from "../Components/Products/FilterSidebar";
-import ShortProducts from "../Components/Products/ShortProducts";
+// import ShortProducts from "../Components/Products/ShortProducts";
 
 const CollectionPage = () => {
   const [sideFilter, setSideFilter] = useState(false);
@@ -59,10 +59,6 @@ const CollectionPage = () => {
           <FaFilter />
           Filter
         </button>
-        {/* ShortProducts Component */}
-        <div>
-          <ShortProducts />
-        </div>
       </div>
 
       {/* Filter Sidebar */}
@@ -79,9 +75,6 @@ const CollectionPage = () => {
       <div className="py-[100px]">
         <ProductGrid filters={filters} />
       </div>
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 };
