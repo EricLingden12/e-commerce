@@ -179,7 +179,7 @@ const Checkout = () => {
               <img
                 className="w-15 h-15 mb-2 rounded-md"
                 draggable="false"
-                src={item.image}
+                src={item.image[0].url}
                 alt=""
               />
               <div className="w-full flex items-center justify-between">

@@ -14,6 +14,8 @@ import PaymentSuccess from "./Components/Cart/PaymentSuccess";
 import Footer from "./Components/Common/Footer";
 import { CartProvider } from "./Components/Cart/CartProvider";
 import AdminPage from "./Pages/AdminPage";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
 
 // Corrected import path
 
@@ -29,6 +31,8 @@ const App = () => {
         <Route path="/women" element={<Women />} />
         <Route path="/offer" element={<Offer />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/collections:collection" element={<CollectionPage />} />
         <Route
           path="/product/:id"

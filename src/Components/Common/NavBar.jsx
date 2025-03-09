@@ -62,24 +62,9 @@ const NavBar = () => {
             <div className="relative dropdown">
               <FaUser className="w-5 h-5 " />
               <div className="w-[105px] z-50 dropdown-content bg-gray-500 absolute top-5 right-0 p-2 hidden">
-                {isAuthenticated ? (
-                  <p>
-                    <button
-                      onClick={() =>
-                        logout({
-                          logoutParams: { returnTo: window.location.origin },
-                        })
-                      }
-                    >
-                      Log Out
-                    </button>
-                  </p>
-                ) : (
-                  <p>
-                    <button onClick={() => loginWithRedirect()}>Log In</button>
-                  </p>
-                )}
-
+                <NavLink to="/login">
+                  <p className="hover:underline underline-offset-2">Login</p>
+                </NavLink>
                 <p>
                   <NavLink
                     className="hover:underline underline-offset-2"

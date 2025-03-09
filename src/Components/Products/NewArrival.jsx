@@ -8,14 +8,14 @@ export default function NewArrival() {
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
-  const [scrollAmount, setScrollAmount] = useState(1000); // Dynamic scroll value
+  const [scrollAmount, setScrollAmount] = useState(1000);
 
   useEffect(() => {
     const updateScrollAmount = () => {
       if (window.innerWidth < 640) {
-        setScrollAmount(250); // Small screens
+        setScrollAmount(250);
       } else if (window.innerWidth < 1024) {
-        setScrollAmount(300); // Tablets
+        setScrollAmount(300);
       } else {
         setScrollAmount(1000); // Larger screens
       }

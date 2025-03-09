@@ -49,43 +49,67 @@ const MyOrder = () => {
   }, []);
 
   return (
-    <div className="bg-gray-200 w-full box-shadow px-5 rounded-lg">
-      <h1 className="text-center text-2xl font-bold py-3">My Order</h1>
-      <div className="w-full py-5">
+    <div className="bg-gray-200 w-full box-shadow px-2 sm:px-5 rounded-lg">
+      <h1 className="text-center text-xl sm:text-2xl font-bold py-3">
+        My Order
+      </h1>
+      <div className="w-full py-3 sm:py-5 overflow-x-auto">
         <table className="w-full bg-gray-700 rounded-lg">
           <thead className="uppercase text-gray-300">
             <tr>
-              <th className="text-md font-semibold py-2">Image</th>
-              <th className="text-md font-semibold py-2">Order ID</th>
-              <th className="text-md font-semibold py-2">Created</th>
-              <th className="text-md font-semibold py-2">Shipping Address</th>
-              <th className="text-md font-semibold py-2">Item</th>
-              <th className="text-md font-semibold py-2">Price</th>
-              <th className="text-md font-semibold py-2">Status</th>
+              <th className="text-xs sm:text-sm md:text-md font-semibold py-1 sm:py-2 px-1">
+                Image
+              </th>
+              <th className="text-xs sm:text-sm md:text-md font-semibold py-1 sm:py-2 px-1">
+                Order ID
+              </th>
+              <th className="text-xs sm:text-sm md:text-md font-semibold py-1 sm:py-2 px-1">
+                Created
+              </th>
+              <th className="text-xs sm:text-sm md:text-md font-semibold py-1 sm:py-2 px-1">
+                Shipping
+              </th>
+              <th className="text-xs sm:text-sm md:text-md font-semibold py-1 sm:py-2 px-1">
+                Items
+              </th>
+              <th className="text-xs sm:text-sm md:text-md font-semibold py-1 sm:py-2 px-1">
+                Price
+              </th>
+              <th className="text-xs sm:text-sm md:text-md font-semibold py-1 sm:py-2 px-1">
+                Status
+              </th>
             </tr>
           </thead>
           <tbody>
             {order.length > 0 ? (
               order.map((order) => (
                 <tr key={order.id} className="text-center text-gray-300">
-                  <td className="py-2">
+                  <td className="py-1 sm:py-2 px-1">
                     <img
                       src={order.orderItems[0].image}
                       alt={order.orderItems[0].name}
-                      className="w-16 h-16 object-cover mx-auto rounded-md"
+                      className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-cover mx-auto rounded-md"
                     />
                   </td>
-                  <td className="py-2">{order.id}</td>
-                  <td className="py-2">
+                  <td className="text-xs sm:text-sm md:text-base py-1 sm:py-2 px-1">
+                    {order.id}
+                  </td>
+                  <td className="text-xs sm:text-sm md:text-base py-1 sm:py-2 px-1">
                     {order.createAt.toLocaleDateString()}
                   </td>
-                  <td className="py-2">
-                    {order.shippingAddress.city},{" "}
-                    {order.shippingAddress.country}
+                  <td className="text-xs sm:text-sm md:text-base py-1 sm:py-2 px-1">
+                    <span className="block">{order.shippingAddress.city}</span>
+                    <span className="block">
+                      {order.shippingAddress.country}
+                    </span>
                   </td>
-                  <td className="py-2">{order.orderItems.length}</td>
-                  <td className="py-2">${order.totalPrice}</td>
-                  <td className="py-2">
+                  <td className="text-xs sm:text-sm md:text-base py-1 sm:py-2 px-1">
+                    {order.orderItems.length}
+                  </td>
+                  <td className="text-xs sm:text-sm md:text-base py-1 sm:py-2 px-1">
+                    ${order.totalPrice}
+                  </td>
+                  <td className="text-xs sm:text-sm md:text-base py-1 sm:py-2 px-1">
                     {order.isDelivered ? (
                       <span className="text-green-500">Paid</span>
                     ) : (
