@@ -1,7 +1,7 @@
 import React from "react";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { MdDeleteForever } from "react-icons/md";
-import { useCart } from "../Cart/CartProvider";
+import { useCart } from "./CartProvider";
 
 const CartContents = () => {
   const { cartItems, removeFromCart, increaseQuantity, decreaseQuantity } =

@@ -2,7 +2,7 @@ import React from "react";
 import { RxCross2 } from "react-icons/rx";
 import CartContents from "../Cart/CartContents";
 import { useNavigate } from "react-router-dom";
-import { useCart } from "../Cart/CartProvider";
+import { useCart } from "./CartProvider";
 
 const CartDrawer = ({ cart, setCart }) => {
   const { cartItems } = useCart();

@@ -16,12 +16,12 @@ createRoot(document.getElementById("root")).render(
         redirect_uri: window.location.origin,
       }}
     >
-      <CartProvider>
-        <BrowserRouter>
+      <BrowserRouter>
+        <CartProvider>
           <Toaster position="top-right" />
           <App />
-        </BrowserRouter>
-      </CartProvider>
+        </CartProvider>
+      </BrowserRouter>
     </Auth0Provider>
   </StrictMode>
 );

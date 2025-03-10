@@ -201,19 +201,26 @@ const FilterSidebar = ({ onFilterChange }) => {
       {/* filter by price */}
       <div className="mb-3">
         <label className="text-lg font-semibold">Price</label>
-        <div className="w-[80%]">
-          <input
-            type="range"
-            name="priceRange"
-            min={5}
-            max={100}
-            value={`${priceRange[0]},${priceRange[1]}`}
-            onChange={handleFilterChange}
-            className="w-full bg-transparent cursor-pointer"
-          ></input>
-          <div className="flex justify-between">
-            <span>${priceRange[0]}</span>
-            <span>${priceRange[1]}</span>
+        <div className="w-[80%] space-y-4">
+          <div>
+            <input
+              type="range"
+              name="maxPrice"
+              min={filter.minPrice} // Ensure max can't be lower than min
+              max="100"
+              value={filter.maxPrice}
+              onChange={handleFilterChange}
+              className="w-full bg-transparent cursor-pointer"
+            />
+            <span>${filter.maxPrice}</span>
+          </div>
+
+          {/* Price Display */}
+          <div className="flex justify-between text-sm">
+            <span>Price Range: </span>
+            <span>
+              ${filter.minPrice} - ${filter.maxPrice}
+            </span>
           </div>
         </div>
       </div>

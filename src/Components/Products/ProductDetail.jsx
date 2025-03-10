@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { FiPlus, FiMinus } from "react-icons/fi";
 import { toast } from "sonner";
 import { useCart } from "../Cart/CartProvider";
 import { product } from "../product";

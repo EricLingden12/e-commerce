@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { FaUser, FaShoppingCart, FaBars } from "react-icons/fa";
 import logo from "../../../public/assets/marowear_white.png";
 import SearchBar from "./SearchBar";
-import CartDrawer from "../Layout/CartDrawer";
+import CartDrawer from "../Cart/CartDrawer";
 import { useCart } from "../Cart/CartProvider";
 import { useAuth0 } from "@auth0/auth0-react";
 

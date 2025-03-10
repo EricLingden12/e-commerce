@@ -65,14 +65,15 @@ export const CartProvider = ({ children }) => {
 
   const decreaseQuantity = (productid, size, color) => {
     setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.productid === productid &&
-        item.size === size &&
-        item.color === color &&
-        item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
-      )
+      prevItems
+        .map((item) =>
+          item.productid === productid &&
+          item.size === size &&
+          item.color === color
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter((item) => item.quantity > 0)
     );
   };
   return (

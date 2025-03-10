@@ -1,31 +1,51 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { NavLink, useSearchParams } from "react-router-dom";
 import { product } from "../product";
 import { FaShoppingCart } from "react-icons/fa";
-const ProductGrid = ({ filters = {} }) => {
-  const {
-    gender = [],
-    category = [],
-    color = "",
-    size = [],
-    brand = [],
-    material = [],
-    minPrice = 5,
-    maxPrice = 100,
-  } = filters;
+
+const ProductGrid = () => {
+  const [searchParams] = useSearchParams();
+  const [filters, setFilters] = useState({
+    gender: [],
+    category: [],
+    color: "",
+    size: [],
+    brand: [],
+    material: [],
+    minPrice: 5,
+    maxPrice: 100,
+  });
+
+  useEffect(() => {
+    const params = Object.fromEntries([...searchParams]);
+    setFilters({
+      gender: params.gender ? params.gender.split(",") : [],
+      category: params.category ? params.category.split(",") : [],
+      color: params.color || "",
+      size: params.size ? params.size.split(",") : [],
+      brand: params.brand ? params.brand.split(",") : [],
+      material: params.material ? params.material.split(",") : [],
+      minPrice: Number(params.minPrice) || 5,
+      maxPrice: Number(params.maxPrice) || 100,
+    });
+  }, [searchParams]);
 
   const filteredProducts = product.filter((item) => {
     const matchesGender =
-      gender.length === 0 || (item.gender && gender.includes(item.gender));
+      filters.gender.length === 0 ||
+      (item.gender && filters.gender.includes(item.gender));
     const matchesCategory =
-      category.length === 0 || category.includes(item.category);
-    const matchesColor = !color || item.color.includes(color);
+      filters.category.length === 0 || filters.category.includes(item.category);
+    const matchesColor = !filters.color || item.color.includes(filters.color);
     const matchesSize =
-      size.length === 0 || size.some((s) => item.size.includes(s));
-    const matchesBrand = brand.length === 0 || brand.includes(item.brand);
+      filters.size.length === 0 ||
+      filters.size.some((s) => item.size.includes(s));
+    const matchesBrand =
+      filters.brand.length === 0 || filters.brand.includes(item.brand);
     const matchesMaterial =
-      material.length === 0 || material.includes(item.material);
-    const matchesPrice = item.price >= minPrice && item.price <= maxPrice;
+      filters.material.length === 0 || filters.material.includes(item.material);
+    const matchesPrice =
+      item.price >= filters.minPrice && item.price <= filters.maxPrice;
 
     return (
       matchesGender &&
