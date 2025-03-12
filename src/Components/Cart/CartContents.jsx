@@ -2,6 +2,7 @@ import React from "react";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { MdDeleteForever } from "react-icons/md";
 import { useCart } from "./CartProvider";
+import { MdCurrencyRupee } from "react-icons/md";
 
 const CartContents = () => {
   const { cartItems, removeFromCart, increaseQuantity, decreaseQuantity } =
@@ -62,8 +63,9 @@ const CartContents = () => {
                 </button>
               </div>
               <div className="sm:flex gap-3 text-center grid">
-                <p className="font-semibold">
-                  ${(itemPrice * itemQuantity).toFixed(2)}
+                <p className="flex items-center font-semibold">
+                  <MdCurrencyRupee />
+                  {(itemPrice * itemQuantity).toFixed(2)}
                 </p>
                 <button
                   onClick={() =>

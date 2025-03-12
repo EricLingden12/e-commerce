@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { product } from "../Components/product";
 import { FaShoppingCart } from "react-icons/fa";
+import { MdCurrencyRupee } from "react-icons/md";
 
 const Men = () => {
   // Filter products for the "Men" category
@@ -21,16 +22,19 @@ const Men = () => {
             src={item.image[0]?.url}
             alt={item.image[0]?.altText}
           />
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-xl font-semibold">{item.name}</p>
-              <p className="text-md font-medium">Brand: {item.brand}</p>
+          <div className="flex items-center  h-[60px]">
+            <div className="grow  h-[60px]">
+              <p className="text-lg font-medium">{item.name}</p>
+              <p className="text-sm font-medium">Brand: {item.brand}</p>
             </div>
-            <div className="text-center">
-              <p className="text-lg font-bold mb-2">${item.price}</p>
-              <button className="bg-white px-3 py-1 rounded-xl text-sm font-bold cursor-pointer">
-                <FaShoppingCart className="text-black w-6 h-6" />
-              </button>
+            <div className="grid text-center  h-[60px]">
+              <p className="flex items-center text-lg font-bold mb-2">
+                <MdCurrencyRupee />
+                {item.price}
+              </p>
+              <p className="cursor-pointer mx-auto">
+                <FaShoppingCart className="text-black w-5 h-5" />
+              </p>
             </div>
           </div>
         </NavLink>

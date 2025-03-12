@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
+import { MdCurrencyRupee } from "react-icons/md";
 
 const FilterSidebar = ({ onFilterChange }) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -212,14 +213,19 @@ const FilterSidebar = ({ onFilterChange }) => {
               onChange={handleFilterChange}
               className="w-full bg-transparent cursor-pointer"
             />
-            <span>${filter.maxPrice}</span>
+            <span className="flex items-center">
+              <MdCurrencyRupee />
+              {filter.maxPrice}
+            </span>
           </div>
 
           {/* Price Display */}
           <div className="flex justify-between text-sm">
             <span>Price Range: </span>
-            <span>
-              ${filter.minPrice} - ${filter.maxPrice}
+            <span className="flex items-center">
+              <MdCurrencyRupee />
+              {filter.minPrice} - <MdCurrencyRupee />
+              {filter.maxPrice}
             </span>
           </div>
         </div>

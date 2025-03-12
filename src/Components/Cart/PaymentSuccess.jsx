@@ -9,14 +9,13 @@ const PaymentSuccess = () => {
   useEffect(() => {
     if (dataQueary) {
       try {
-        // Assuming dataQueary is a JSON string, parse it directly
         const resObject = JSON.parse(dataQueary);
         setData(resObject);
       } catch (error) {
         console.error("Error parsing dataQueary:", error);
       }
     }
-  }, [dataQueary]); // Depend on dataQueary instead of search
+  }, [dataQueary]);
 
   return (
     <div className="mt-[100px]">

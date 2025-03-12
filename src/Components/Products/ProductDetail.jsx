@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { toast } from "sonner";
 import { useCart } from "../Cart/CartProvider";
 import { product } from "../product";
+import { MdCurrencyRupee } from "react-icons/md";
 
 const ProductDetail = () => {
   const { addToCart } = useCart();
@@ -82,7 +83,9 @@ const ProductDetail = () => {
       {/* Right side - Product details */}
       <div className="grid gap-3 md:mx-0 md:ms-0 md:mt-0 mt-10 ms-12 mb-[100px] mx-auto">
         <h1 className="text-3xl font-extrabold">{selectedProduct.name}</h1>
-        <p className="font-light text-xl">${selectedProduct.price}</p>
+        <p className="flex items-center font-light text-xl">
+          <MdCurrencyRupee /> {selectedProduct.price}
+        </p>
         <p className="font-light text-md text-gray-500">
           {selectedProduct.description}
         </p>
