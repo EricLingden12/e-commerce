@@ -49,3 +49,14 @@ a.active hr {
 .box-shadow {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+/* admin */
+.admin-shadow {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.admin-sidebar a.active {
+  color: red;
+}
+.active-dashboard.active {
+  color: red;
+}

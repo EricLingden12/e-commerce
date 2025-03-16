@@ -1,7 +1,7 @@
 // NavBar.jsx
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FaUser, FaShoppingCart, FaBars } from "react-icons/fa";
+import { FaUser, FaShoppingCart } from "react-icons/fa";
 import logo from "../../../public/assets/marowear_white.png";
 import SearchBar from "./SearchBar";
 import CartDrawer from "../Cart/CartDrawer";
@@ -19,7 +19,7 @@ const NavBar = () => {
         <div className="md:container w-[95%] mx-auto flex items-center justify-between my-3">
           <div className="flex items-center gap-20">
             {/* logo */}
-            <NavLink to="/collections:collection" className="logo-name">
+            <NavLink to="/collections:collection" className="">
               <p className="text-xl font-bold flex items-center gap-2">
                 <img className="w-9 h-9" src={logo} alt="" />
                 Maro Wear

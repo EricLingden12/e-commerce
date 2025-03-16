@@ -5,7 +5,6 @@ import { FaShoppingCart } from "react-icons/fa";
 import { MdCurrencyRupee } from "react-icons/md";
 
 const Men = () => {
-  // Filter products for the "Men" category
   const menProducts = product.filter((item) => item.gender === "Men");
 
   return (

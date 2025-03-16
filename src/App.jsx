@@ -11,14 +11,16 @@ import Checkout from "./Components/Cart/Checkout";
 import PaymentMethod from "./Components/Cart/PaymentMethod";
 import PaymentSuccess from "./Components/Cart/PaymentSuccess";
 import { CartProvider } from "./Components/Cart/CartProvider";
-import AdminPage from "./Pages/AdminPage";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import UserLayout from "./Components/Layout/UserLayout";
+import AdminLayout from "./Components/Admin/AdminLayout";
+import AdminDashboard from "./Pages/AdminDashboard";
+import AdminUser from "./Pages/AdminUser";
+import AdminProduct from "./Pages/AdminProduct";
+import AdminOrders from "./Pages/AdminOrders";
+import AdminSalesReport from "./Pages/AdminSalesReport";
 
-// Corrected import path
-
-// App.jsx
 const App = () => {
   return (
     <CartProvider>
@@ -40,7 +42,13 @@ const App = () => {
         </Route>
 
         {/* Admin route */}
-        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminDashboard />} />
+          <Route path="users" element={<AdminUser />} />
+          <Route path="products" element={<AdminProduct />} />
+          <Route path="orders" element={<AdminOrders />} />
+          <Route path="sales" element={<AdminSalesReport />} />
+        </Route>
       </Routes>
     </CartProvider>
   );

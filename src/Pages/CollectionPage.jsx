@@ -3,13 +3,11 @@ import ProductGrid from "../Components/Products/ProductGrid";
 import Footer from "../Components/Common/Footer";
 import { FaFilter } from "react-icons/fa";
 import FilterSidebar from "../Components/Products/FilterSidebar";
-// import ShortProducts from "../Components/Products/ShortProducts";
 
 const CollectionPage = () => {
   const [sideFilter, setSideFilter] = useState(false);
   const sideRef = useRef(null);
 
-  // State for filters
   const [filters, setFilters] = useState({
     gender: [],
     category: [],
@@ -20,26 +18,21 @@ const CollectionPage = () => {
     minPrice: 5,
     maxPrice: 100,
   });
-
-  // Toggle filter sidebar
   const toggleSideFilter = () => {
     setSideFilter(!sideFilter);
   };
 
-  // Close sidebar when clicking outside
   const handleClickOutside = (e) => {
     if (sideRef.current && !sideRef.current.contains(e.target)) {
       setSideFilter(false);
     }
   };
 
-  // Handle filter changes from FilterSidebar
   const handleFilterChange = (newFilters) => {
     setFilters(newFilters);
-    console.log("Filters received in CollectionPage:", newFilters); // Debugging statement
+    console.log("Filters received in CollectionPage:", newFilters);
   };
 
-  // Add event listener for clicking outside the sidebar
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {

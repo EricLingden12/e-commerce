@@ -5,7 +5,7 @@ import { CgProfile } from "react-icons/cg";
 
 const Profile = () => {
   return (
-    <div className="container md:flex grid gap-6 flex-start mx-auto my-[100px]">
+    <div className="container md:flex grid gap-6 flex-start mx-auto md:my-[100px] my-[150px]">
       {/* left section */}
       <div className="grow">
         <MyOrder />

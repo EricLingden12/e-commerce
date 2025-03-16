@@ -64,8 +64,8 @@ const PaymentMethod = () => {
 
   return (
     <>
-      <div className="flex items-start justify-center gap-10 my-[150px]">
-        <div className="w-[50%] bg-gray-200 rounded-md p-5">
+      <div className="md:flex grid  items-start justify-center gap-10 my-[150px]">
+        <div className="md:w-[50%] w-[100%] bg-gray-200 rounded-md p-5">
           <div className="flex justify-between border-b-1 border-black">
             <h1 className="text-xl pb-3">Shipping Address</h1>
             <p className="text-lg text-blue-400 cursor-pointer">Edit</p>

@@ -36,7 +36,7 @@ const Checkout = () => {
   };
 
   return (
-    <div className="my-[100px] w-[80%] mx-auto lg:flex grid items-start justify-center gap-5">
+    <div className="md:my-[100px] my-[150px] w-[80%] mx-auto flex md:flex-row flex-col-reverse items-start justify-center gap-5">
       {/* checkout form  */}
       <div className="bg-gray-100 lg:w-[40%] w-full mx-auto py-10 rounded-md shadow-md">
         <h1 className="uppercase text-2xl text-center font-bold">
