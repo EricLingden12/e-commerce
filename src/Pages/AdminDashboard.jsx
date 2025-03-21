@@ -30,7 +30,7 @@ const AdminDashboard = () => {
         </div>
       </div>
       {/* orders List */}
-      <div className="w-[90%] mx-auto mt-10">
+      <div className="md:w-[90%] w-[98%] mx-auto mt-10">
         <h2 className="text-lg font-semibold ">Recent Orders</h2>
         <div className="w-[100%] mx-auto py-5 sm:py-5 overflow-x-auto">
           <table className="w-full bg-gray-700 rounded-lg">
@@ -44,6 +44,9 @@ const AdminDashboard = () => {
                 </th>
                 <th className="text-xs sm:text-sm md:text-md font-semibold py-1 sm:py-2 px-1">
                   Product ID
+                </th>
+                <th className="text-xs sm:text-sm md:text-md font-semibold py-1 sm:py-2 px-1">
+                  Quantity
                 </th>
                 <th className="text-xs sm:text-sm md:text-md font-semibold py-1 sm:py-2 px-1">
                   Total Price
@@ -68,6 +71,10 @@ const AdminDashboard = () => {
                     <td className="text-xs sm:text-sm md:text-base py-1 sm:py-2 px-1">
                       {orders.productid}
                     </td>
+                    <td className="text-xs sm:text-sm md:text-base py-1 sm:py-2 px-1">
+                      1
+                    </td>
+
                     <td className=" text-xs sm:text-sm md:text-base py-1 sm:py-2 px-1 ">
                       <p className="flex items-center justify-center">
                         <MdCurrencyRupee />

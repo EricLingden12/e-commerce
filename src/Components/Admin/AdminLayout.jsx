@@ -51,7 +51,7 @@ const AdminLayout = () => {
   return (
     <div>
       {/* Mobile Header */}
-      <div className="bg-black text-white py-3 px-5 md:hidden flex gap-5 items-center">
+      <div className="bg-black text-white py-3 px-5 md:hidden flex gap-5 items-center fixed top-0 left-0 w-full z-50">
         <button onClick={() => setSidebar(!sidebar)}>
           {sidebar ? (
             <RxCross2 className="w-7 h-7" />
@@ -65,7 +65,7 @@ const AdminLayout = () => {
       {/* Sidebar */}
       <div
         ref={sidebarRef}
-        className={`fixed w-[250px] bg-gray-100 admin-shadow py-5 h-[100vh] duration-300 transform ${
+        className={`fixed w-[250px] bg-gray-100 admin-shadow pb-5 pt-20 h-[100vh] duration-300 transform ${
           sidebar ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -73,7 +73,7 @@ const AdminLayout = () => {
       </div>
 
       {/* Main Content */}
-      <div className="md:ml-[250px] ml-0">
+      <div className="md:ml-[250px] ml-0 md:pt-5 pt-20">
         <Outlet />
       </div>
     </div>
