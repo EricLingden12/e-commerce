@@ -3,12 +3,17 @@ import { RxCross2 } from "react-icons/rx";
 import CartContents from "../Cart/CartContents";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "./CartProvider";
+import { toast } from "sonner";
 
 const CartDrawer = ({ cart, setCart }) => {
   const { cartItems } = useCart();
   const navigate = useNavigate();
 
   const handleCheckout = () => {
+    if (cartItems.length === 0) {
+      toast.error("Your cart is empty");
+      return;
+    }
     setCart(false);
     navigate("/checkout", { state: { cartItems } });
   };

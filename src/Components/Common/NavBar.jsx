@@ -73,6 +73,14 @@ const NavBar = () => {
                     View Profile
                   </NavLink>
                 </p>
+                <p>
+                  <NavLink
+                    className="hover:underline underline-offset-2"
+                    to="/admin"
+                  >
+                    Admin
+                  </NavLink>
+                </p>
               </div>
             </div>
           </div>
